@@ -1,21 +1,20 @@
 import { useState } from "react"
-import { loginUser } from "./services/login.services"
+import { registerUser } from "./services/register.services"
 
-const Login = () => {
-  const [userName, setUserName] = useState('atralex')
-  const [password, setPassword] = useState('1234')
+const Register = () => {
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
   const user = {
     username: userName,
-    pdw: password,
+    pdw: password
   }
-
   return (
     <div>
       <input type="text" placeholder="Introduce Usuario" onChange={(e) => setUserName(e.target.value)}/>
       <input type="text" placeholder="Introduce Contraseña" onChange={(e) => setPassword(e.target.value)}/>
-      <button onClick={() => loginUser(user)}>Login</button>
+      <button onClick={() => registerUser(user)}>Register</button>
     </div>
   )
 }
 
-export default Login
+export default Register

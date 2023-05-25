@@ -9,6 +9,7 @@ import './index.css'
 import Login from './views/Login/Login.jsx';
 import User from './views/User/User.jsx';
 import Feed from './views/Feed/Feed.jsx';
+import Register from './views/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/feed",
         element: <Feed />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       }
     ]
   },

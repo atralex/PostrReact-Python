@@ -1,16 +1,11 @@
 import { useState } from "react"
+import { getUsers } from "./services/user.services"
 
 const User = () => {
   const [users, setUsers] = useState([])
-  async function getUsers() {
-  fetch('http://localhost:5000/api/entities')
-  .then(response => response.json())
-  .then((data) => {setUsers(data)
-  console.log(data)})
-  }
   return (
     <div>
-      <button type="button" onClick={()=> getUsers()}>Fetch</button>
+      <button type="button" onClick={()=> getUsers(setUsers)}>Fetch</button>
       {users.map((user) => {
         return <li key={user.id}>{user.username} {user.pdw}</li>
       })}
