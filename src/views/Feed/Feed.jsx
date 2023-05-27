@@ -13,7 +13,7 @@ const Feed = () => {
     <div>
       <input type="text" placeholder="Introduce Usuario" onChange={(e) => setUserName(e.target.value)}/>
       <input type="text" placeholder="Introduce Contenido del Post" onChange={(e) => setContent(e.target.value)}/>
-      <button onClick={() => addPost(post)}>Login</button>
+      <button onClick={() => addPost(post)}>Añadir Post</button>
     </div>
   )
 }

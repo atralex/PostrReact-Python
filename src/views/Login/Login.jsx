@@ -12,7 +12,7 @@ const Login = () => {
   return (
     <div>
       <input type="text" placeholder="Introduce Usuario" onChange={(e) => setUserName(e.target.value)}/>
-      <input type="text" placeholder="Introduce Contraseña" onChange={(e) => setPassword(e.target.value)}/>
+      <input type="password" placeholder="Introduce Contraseña" onChange={(e) => setPassword(e.target.value)}/>
       <button onClick={() => loginUser(user)}>Login</button>
     </div>
   )

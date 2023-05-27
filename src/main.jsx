@@ -10,6 +10,7 @@ import Login from './views/Login/Login.jsx';
 import User from './views/User/User.jsx';
 import Feed from './views/Feed/Feed.jsx';
 import Register from './views/Register/Register.jsx';
+import PostLIst from './views/Feed/PostLIst.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,8 +27,12 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "/feed",
+        path: "/feed/add",
         element: <Feed />,
+      },
+      {
+        path: "/feed",
+        element: <PostLIst />,
       },
       {
         path: "/register",
