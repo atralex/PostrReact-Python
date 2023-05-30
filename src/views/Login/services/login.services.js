@@ -1,5 +1,5 @@
 async function loginUser(usuario){
-  await fetch('http://localhost:5000/api/login', {
+  return await fetch('http://localhost:5000/api/login', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -7,8 +7,9 @@ async function loginUser(usuario){
       'Access-Control-Allow-Origin': 'http://localhost:5173'
     },
     body: JSON.stringify(usuario)
-  }).then(res => res.json())
-  .then(data => {console.log(data)})
+  }).then(res => {return res.json()})
+  .then(data => {
+    return(data)})
 }
 
 export {

@@ -11,6 +11,7 @@ import User from './views/User/User.jsx';
 import Feed from './views/Feed/Feed.jsx';
 import Register from './views/Register/Register.jsx';
 import PostLIst from './views/Feed/PostLIst.jsx';
+import Profile from './views/Profile/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,16 +24,21 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/main/:username",
+        element: <Profile />,
+      },
+      {
         path: "/user",
         element: <User />,
       },
-      {
-        path: "/feed/add",
-        element: <Feed />,
-      },
+
       {
         path: "/feed",
         element: <PostLIst />,
+      },
+      {
+        path: "/addPost",
+        element: <Feed />,
       },
       {
         path: "/register",

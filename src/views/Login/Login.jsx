@@ -8,12 +8,19 @@ const Login = () => {
     username: userName,
     pdw: password,
   }
-
+  async function handleLogin() {
+    const response = await loginUser(user)
+    if(response.status === 200){
+      window.location.href = '/main/' + userName;
+    } else {
+      alert('Usuario o Contraseña Incorrectos')
+    }
+  }
   return (
     <div>
       <input type="text" placeholder="Introduce Usuario" onChange={(e) => setUserName(e.target.value)}/>
       <input type="password" placeholder="Introduce Contraseña" onChange={(e) => setPassword(e.target.value)}/>
-      <button onClick={() => loginUser(user)}>Login</button>
+      <button onClick={() => handleLogin()}>Login</button>
     </div>
   )
 }

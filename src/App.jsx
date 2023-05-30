@@ -6,7 +6,10 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <header className=''>
+        <Navbar />
+      </header>
+
       <Outlet />
     </>
   )
