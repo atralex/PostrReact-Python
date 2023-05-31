@@ -1,7 +1,7 @@
 import { serverConfig, serverType } from "../../../config/server.config"
 
 async function listPostByUserId(userId){
-  const data = await fetch(serverConfig[serverType].host+serverConfig[serverType].port+serverConfig[serverType].api.listPostByUsername+userId, 
+  const posts = await fetch(serverConfig[serverType].host+serverConfig[serverType].port+serverConfig[serverType].api.listPostByUsername+userId, 
       {
         method: 'GET',
         headers: {
@@ -9,7 +9,7 @@ async function listPostByUserId(userId){
         }
       }
     ).then(res => res.json()).then(data => {return data})
-  return data
+  return posts
 }
 
 export {

@@ -11,7 +11,7 @@ const Login = () => {
   async function handleLogin() {
     const response = await loginUser(user)
     if(response.status === 200){
-      window.location.href = '/main/' + userName;
+      window.location.href = '/profile/' + userName;
     } else {
       alert('Usuario o Contraseña Incorrectos')
     }
