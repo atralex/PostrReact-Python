@@ -1,5 +1,7 @@
+import { serverConfig, serverType } from "../../../config/server.config"
+
 async function registerUser(usuario){
-  await fetch('http://localhost:5000/api/register', {
+  await fetch(serverConfig[serverType].host+serverConfig[serverType].port+serverConfig[serverType].api.register, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
