@@ -22,6 +22,17 @@ const serverConfig = {
       addPost: '/api/posts',
       listPostByUsername: '/api/posts/', // + username
     }
+  },
+  ruby: {
+    port: '3000',
+    host: 'http://localhost:',
+    api: {
+      getAllUsers: '/usuarios',
+      register: '/registarUsuario',
+      login: '/login',
+      addPost: '/addTweet',
+      listPostByUsername: '/tweets/', // + username
+    }
   }
 }
 

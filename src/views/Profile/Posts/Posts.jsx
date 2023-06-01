@@ -8,7 +8,7 @@ const Posts = (props) => {
   if(posts[0] === 'promise'){
   return (
       <div className='justify-center text-center'>
-      <img className='m-auto' src={loader} alt="" />
+      <img className='m-auto animate-spin animate-infinite animate-ease-in-out' src={loader} alt="" />
 		</div>
   )} else {
     return (
