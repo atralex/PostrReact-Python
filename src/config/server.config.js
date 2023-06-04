@@ -2,6 +2,7 @@ const serverType = 'python'
 
 const serverConfig = {
   python: {
+    logo: 'flaskLogo',
     port: '5000',
     host: 'http://localhost:',
     api: {
@@ -13,6 +14,7 @@ const serverConfig = {
     }
   },
   node: {
+    logo: 'nodeLogo',
     port: '3000',
     host: 'http://localhost:',
     api: {
@@ -24,6 +26,7 @@ const serverConfig = {
     }
   },
   ruby: {
+    logo: 'railsLogo',
     port: '3000',
     host: 'http://localhost:',
     api: {

@@ -13,7 +13,7 @@ const Posts = (props) => {
   )} else {
     return (
       <div className='justify-center text-center'>
-        {posts.map((post) => {
+        {posts.reverse().map((post) => {
           contador += 1;
           return (
             <div key={contador}>
@@ -34,7 +34,7 @@ const Posts = (props) => {
 }
 
 Posts.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
+  posts: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default Posts

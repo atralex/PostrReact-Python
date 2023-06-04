@@ -23,7 +23,7 @@ const PostLIst = () => {
       </div>
       <div>
         <ul>
-          {posts.map((post)=> {
+          {posts.reverse().map((post)=> {
             contador += 1
             return <li key={contador} >
               <h2>{permanentUsername  }</h2>
