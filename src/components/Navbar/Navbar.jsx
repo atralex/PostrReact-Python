@@ -5,6 +5,7 @@ import railsLogo from '../../assets/railsLogo.png'
 import nodeLogo from '../../assets/nodeLogo.png'
 import { useUsernameStore } from "../../store/counterStore"
 import { useNavigate } from 'react-router-dom';
+import { logout } from "../../config/cookie.session"
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -18,6 +19,7 @@ const Navbar = () => {
     logo = nodeLogo
   }
   const handleLogout = () => {
+    logout()
     setUsername('')
     navigate('/')
   }

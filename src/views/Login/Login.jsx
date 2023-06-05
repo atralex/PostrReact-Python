@@ -2,6 +2,7 @@ import { useState } from "react"
 import { loginUser } from "./services/login.services"
 import { useUsernameStore } from "../../store/counterStore"
 import { useNavigate } from 'react-router-dom';
+import { setCookie } from "../../config/cookie.session";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -17,6 +18,7 @@ const Login = () => {
     if(response.status === 200){
       setUsername(userName)
       console.log(username)
+      setCookie(userName, password)
       navigate('/profile/'+userName)
     } else {
       alert('Usuario o Contraseña Incorrectos')
