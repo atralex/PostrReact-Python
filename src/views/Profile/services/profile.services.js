@@ -1,7 +1,7 @@
 import { serverConfig, serverType } from "../../../config/server.config"
 
-async function listPostByUserId(userId){
-  const posts = await fetch(serverConfig[serverType].host+serverConfig[serverType].port+serverConfig[serverType].api.listPostByUsername+userId, 
+async function listPostByUserId(username){
+  const posts = await fetch(serverConfig[serverType].host+serverConfig[serverType].port+serverConfig[serverType].api.listPostByUsername+username, 
       {
         method: 'GET',
         headers: {

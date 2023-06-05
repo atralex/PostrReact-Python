@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { loginUser } from "./services/login.services"
+import { useUsernameStore } from "../../store/counterStore"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [userName, setUserName] = useState('atralex')
-  const [password, setPassword] = useState('1234')
+  const navigate = useNavigate()
+  const {username, setUsername} = useUsernameStore()
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
   const user = {
     username: userName,
     pdw: password,
@@ -11,13 +15,15 @@ const Login = () => {
   async function handleLogin() {
     const response = await loginUser(user)
     if(response.status === 200){
-      window.location.href = '/profile/' + userName;
+      setUsername(userName)
+      console.log(username)
+      navigate('/profile/'+userName)
     } else {
       alert('Usuario o Contraseña Incorrectos')
     }
   }
   return (
-    <div>
+    <div className="">
       <input type="text" placeholder="Introduce Usuario" onChange={(e) => setUserName(e.target.value)}/>
       <input type="password" placeholder="Introduce Contraseña" onChange={(e) => setPassword(e.target.value)}/>
       <button onClick={() => handleLogin()}>Login</button>

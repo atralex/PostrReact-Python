@@ -1,7 +1,9 @@
 import loader from '../../../assets/loader.png'
 import PropTypes from 'prop-types'
+import { useUsernameStore } from '../../../store/counterStore';
 
 const Posts = (props) => {
+  console.log(useUsernameStore.getState())
   let contador = 0;
   // eslint-disable-next-line react/prop-types
   const {posts, username} = props;
@@ -13,7 +15,7 @@ const Posts = (props) => {
   )} else {
     return (
       <div className='justify-center text-center'>
-        {posts.reverse().map((post) => {
+        {posts.map((post) => {
           contador += 1;
           return (
             <div key={contador}>
