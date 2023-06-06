@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { useUsernameStore } from './store/counterStore'
 import { getCookie } from './config/cookie.session'
 import { useEffect } from 'react'
+import Footer from './components/Footer'
 
 function App() {
   const navigate = useNavigate()
@@ -20,11 +21,11 @@ function App() {
 
   return (
     <>
-      <header className=''>
-        <Navbar username={username}/>
-      </header>
-
-      <Outlet />
+      <Navbar username={username}/>
+      <div className='flex-1 mt-3 pb-36'>
+        <Outlet />
+      </div>
+      <Footer />
     </>
   )
 }

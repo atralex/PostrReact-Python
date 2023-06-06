@@ -14,9 +14,9 @@ const Profile = () => {
     console.log(posts)
   },[])
   return (
-    <div>
+    <div className="w-1/2 bg-emerald-400 m-auto">
       mi feed {username}
-      <Posts posts={posts} username={username}/>
+          <Posts posts={posts} username={username}/>
     </div>
   )
 }

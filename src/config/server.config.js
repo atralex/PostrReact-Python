@@ -1,4 +1,4 @@
-const serverType = 'ruby'
+const serverType = 'node'
 
 const serverConfig = {
   python: {

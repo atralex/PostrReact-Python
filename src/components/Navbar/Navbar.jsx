@@ -25,23 +25,36 @@ const Navbar = () => {
   }
   if(username !== ''){
   return (
-<nav className="bg-white border-gray-200 dark:bg-gray-600 w-full">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <Link to="/" >
-        <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
+<div className='top-0 sticky'>
+<nav className=" bg-white border-b border-gray-200 ">
+  <div className="flex flex-wrap items-center justify-between mx-auto p-4">
+    <Link to={`/profile/${username}`} className="flex items-center ">
+      <img src={logo} className="md:h-8 h-20" alt="Logo" />
     </Link>
-    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-600 md:dark:bg-gray-600 dark:border-gray-600">
-      <li className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-        <Link to={`/profile/${username}`} className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">@{username}</Link>
+    <div className="items-center justify-between md:flex md:order-1">
+      <ul className="flex flex-col p-4 md:p-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+        <li>
+          <Link
+            to={`/profile/${username}`}
+            className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
+            @{username}
+          </Link>
         </li>
         <li>
-          <Link to="/addPost" className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Registrar Post</Link>
+          <Link
+            to="/addPost"
+            className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
+            Registrar Post
+          </Link>
         </li>
         <li>
-          <Link to="/feed" className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Listar Post</Link>
+          <Link
+            to="/feed"
+            className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text--400 focus:text-yellow-400 md:p-0">
+            Ver Posts
+          </Link>
         </li>
-        <li className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+        <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
           <button onClick={
             () => {handleLogout()}
           }>Logout</button>
@@ -50,32 +63,45 @@ const Navbar = () => {
     </div>
   </div>
 </nav>
+</div>
 
 )}else{
   return (
-  <nav className="bg-white border-gray-200 dark:bg-gray-600 w-full">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <Link to="/" >
-        <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
-    </Link>
-    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-600 md:dark:bg-gray-600 dark:border-gray-600">
-        <li>
-          <Link to="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:hover:text-blue-700" aria-current="page">Home</Link>
-        </li>
-        <li>
-          <Link to="/register" className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Registrar Usuario</Link>
-        </li>
-        <li>
-          <Link to="/feed" className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Listar Post</Link>
-        </li>
-      </ul>
+    <div className='top-0 sticky'>
+      <nav className=" bg-white border-b border-gray-200 ">
+        <div className="flex flex-wrap items-center justify-between mx-auto p-4">
+          <Link to="/" className="flex items-center ">
+            <img src={logo} className="md:h-8 h-20" alt="Logo" />
+          </Link>
+          <div className="items-center justify-between md:flex md:order-1">
+            <ul className="flex flex-col p-4 md:p-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
+                  Registrar Usuario
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/feed"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-400 focus:text-yellow-400 md:p-0">
+                  Ver Posts
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
-</nav>
-
-)
-  }
+)}
 
 }
 

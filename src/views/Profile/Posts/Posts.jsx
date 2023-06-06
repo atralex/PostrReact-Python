@@ -19,7 +19,7 @@ const Posts = (props) => {
           contador += 1;
           return (
             <div key={contador}>
-              <div className="max-w-sm w-full lg:max-w-full lg:flex justify-center">
+              <div className="max-w-sm my-1 w-full lg:max-w-full lg:flex justify-center">
                 <div className="w-96 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-700 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                   <div className="mb-8">
                     <div className="text-gray-900 font-bold text-xl mb-2">@{username}</div>
