@@ -39,7 +39,7 @@ const Login = () => {
         </div>
         <button onClick={() => handleLogin()}>Login</button>
       </div>
-      <div className="mt-5 mt-20 p-10 bg-slate-600 w-1/3 m-auto rounded-lg">
+      <div className="mt-20 p-10 bg-slate-600 w-1/3 m-auto rounded-lg">
         <div className="m-auto">
           <h3 className="text-3xl text-center">Bienvenido a Postr</h3>
           <h4 className="text-xl text-center">La red social de los programadores</h4>
